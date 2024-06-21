@@ -7,9 +7,9 @@ class Common {
     );
   }
 
-  static SizedBox gWidth(double height) {
+  static SizedBox gWidth(double width) {
     return SizedBox(
-      height: height,
+      width: width,
     );
   }
 }

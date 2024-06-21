@@ -5,7 +5,7 @@ import 'package:mvp_app/core/global/variables.dart';
 import 'package:mvp_app/core/style/routes.dart';
 import 'package:mvp_app/core/style/text.dart';
 import 'package:mvp_app/presentation/screen/auth/login_screen.dart';
-import 'package:mvp_app/presentation/screen/home/home_screen.dart';
+import 'package:mvp_app/presentation/widget/bottom_navigation.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
           /// if the userId is not empty which means user is already logged in. in that case will navigate to home page
           Navigator.pushAndRemoveUntil(
             context,
-            CustomPageRoute.tweenRoute(const HomePage()),
+            CustomPageRoute.tweenRoute(const BottomNavigation()),
             (_) => false,
           );
         } else {

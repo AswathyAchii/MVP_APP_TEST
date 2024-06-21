@@ -17,7 +17,7 @@ class _AppWidgetState extends State<AppWidget> {
       title: 'MVP',
       theme: ThemeData(
         // This is the theme of your application.
-        colorScheme: ColorScheme.fromSeed(seedColor: secondaryColor),
+        colorScheme: ColorScheme.fromSeed(seedColor: primaryColor, primary: primaryColor),
         useMaterial3: true,
       ),
       home: const SplashScreen(),

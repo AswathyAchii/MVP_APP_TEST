@@ -3,7 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mvp_app/core/global/constants.dart';
 import 'package:mvp_app/core/style/colors.dart';
 import 'package:mvp_app/core/style/common.dart';
+import 'package:mvp_app/core/style/routes.dart';
 import 'package:mvp_app/core/style/text.dart';
+import 'package:mvp_app/presentation/screen/account/notification.dart';
 import 'package:mvp_app/presentation/widget/common_button.dart';
 
 class HomePage extends StatefulWidget {
@@ -48,7 +50,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             const Spacer(),
 
             ///  NOTIFICATION BUTTON
-            CommonIconButton(onPress: () {}, icon: Icons.notifications_none, isStack: true)
+            CommonIconButton(
+              onPress: () {
+                Navigator.push(context, CustomPageRoute.routeFromRight(const NotificationPage()));
+              },
+              icon: Icons.notifications_none,
+              isStack: true,
+            )
           ],
         ),
         bottom: PreferredSize(
@@ -76,7 +84,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       ),
 
       ///-------- BOTTOM NAVIGATION BAR -----//
-      // bottomNavigationBar: BottomNavigationBar(items: [BottomNavigationBarItem(icon: )],),
     );
   }
 
@@ -182,6 +189,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            /// ------TYPE
             Container(
               height: 22,
               width: 80,
@@ -192,6 +200,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               child: Center(child: TextWidgets.bodyText(text: 'UI ux Design', fontSize: 9)),
             ),
             Common.gHeight(20),
+
+            /// ------- TASK NAME & TASK
             Row(
               children: [
                 Column(
@@ -221,10 +231,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                /// ------- DATE  ------//
                 TextWidgets.bodyText1(text: date, fontSize: 13),
                 if (isHistory) ...[
+                  /// ------- POINTS  ------//
                   TextWidgets.bodyText1(text: "5 points", fontSize: 13),
                 ],
+
+                /// ------- DURATION  ------//
                 TextWidgets.bodyText1(text: "5 hours", fontSize: 13),
               ],
             )

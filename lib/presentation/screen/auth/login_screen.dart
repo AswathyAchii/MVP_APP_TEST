@@ -6,7 +6,7 @@ import 'package:mvp_app/core/style/colors.dart';
 import 'package:mvp_app/core/style/common.dart';
 import 'package:mvp_app/core/style/routes.dart';
 import 'package:mvp_app/core/style/text.dart';
-import 'package:mvp_app/presentation/screen/home/home_screen.dart';
+import 'package:mvp_app/presentation/widget/bottom_navigation.dart';
 import 'package:mvp_app/presentation/widget/common_button.dart';
 import 'package:mvp_app/presentation/widget/common_text_field.dart';
 
@@ -62,7 +62,7 @@ class LoginPage extends StatelessWidget {
                         /// Navigating to HOME PAGE
                         Navigator.pushAndRemoveUntil(
                           context,
-                          CustomPageRoute.tweenRoute(const HomePage()),
+                          CustomPageRoute.tweenRoute(const BottomNavigation()),
                           (_) => false,
                         );
                       },
