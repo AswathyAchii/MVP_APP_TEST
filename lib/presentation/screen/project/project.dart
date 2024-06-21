@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mvp_app/core/global/constants.dart';
 import 'package:mvp_app/core/style/colors.dart';
@@ -74,7 +73,7 @@ class _ProjectPageState extends State<ProjectPage> {
     );
   }
 
-  Container projectItem({String? status}) {
+  Widget projectItem({String? status}) {
     return Container(
       decoration: BoxDecoration(color: secondaryColor, boxShadow: [
         BoxShadow(
@@ -92,7 +91,9 @@ class _ProjectPageState extends State<ProjectPage> {
           children: [
             headerContainer(),
             Common.gHeight(10),
-            TextWidgets.bodyText1(text: 'Task planner App with clean and modern...', fontSize: 12),
+            TextWidgets.bodyText1(
+                text: 'Task planner App with clean and modern...',
+                fontSize: 12),
             Common.gHeight(10),
             imageStack(),
             Common.gHeight(10),
@@ -101,8 +102,12 @@ class _ProjectPageState extends State<ProjectPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                TextWidgets.bodyText(text: 'Progress', fontSize: 12, color: Colors.grey.shade700),
-                TextWidgets.bodyText(text: '64%', fontSize: 12, color: Colors.grey.shade700),
+                TextWidgets.bodyText(
+                    text: 'Progress',
+                    fontSize: 12,
+                    color: Colors.grey.shade700),
+                TextWidgets.bodyText(
+                    text: '64%', fontSize: 12, color: Colors.grey.shade700),
               ],
             ),
             Common.gHeight(10),
@@ -111,11 +116,15 @@ class _ProjectPageState extends State<ProjectPage> {
               child: Stack(
                 children: [
                   Container(
-                    decoration: BoxDecoration(color: greyLight, borderRadius: BorderRadius.circular(2)),
+                    decoration: BoxDecoration(
+                        color: greyLight,
+                        borderRadius: BorderRadius.circular(2)),
                     width: double.infinity,
                   ),
                   Container(
-                    decoration: BoxDecoration(color: primaryColor, borderRadius: BorderRadius.circular(2)),
+                    decoration: BoxDecoration(
+                        color: primaryColor,
+                        borderRadius: BorderRadius.circular(2)),
                     width: 120,
                   ),
                 ],
@@ -154,14 +163,17 @@ class _ProjectPageState extends State<ProjectPage> {
                 ),
               ),
               Common.gWidth(6),
-              TextWidgets.bodyText(text: "High Priority", color: primaryColor, fontSize: 12),
+              TextWidgets.bodyText(
+                  text: "High Priority", color: primaryColor, fontSize: 12),
             ],
           ),
         ),
         TextWidgets.bodyText(
             text: status ?? 'Pending',
             fontSize: 12,
-            color: status == 'Work on' ? Colors.greenAccent.shade400 : Colors.orange)
+            color: status == 'Work on'
+                ? Colors.greenAccent.shade400
+                : Colors.orange)
       ],
     );
   }
@@ -178,7 +190,8 @@ class _ProjectPageState extends State<ProjectPage> {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(color: grey, width: .4),
-                image: const DecorationImage(image: AssetImage("assets/projects.png")),
+                image: const DecorationImage(
+                    image: AssetImage("assets/projects.png")),
               ),
             ),
             Common.gWidth(10),
